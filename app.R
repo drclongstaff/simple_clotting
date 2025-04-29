@@ -8,21 +8,24 @@ library(bslib)
 source("./Modules/Datload.R")
 source("./Modules/Datproc.R")
 source("./Modules/Datcalc.R")
-source("./Modules/Plotone.R")
-source("./Modules/Plotsall.R")
+source("./Modules/Makeplot.R")
+source("./Modules/Plotone2.R")
+source("./Modules/Plotsall2.R")
 source("./Modules/ResTab.R")
 
-ver_str <- "version 0.3"
+ThisVersion <- "version 0.3.2"
+ThisApp <- "Simple clotting app"
 # thematic::thematic_shiny()
+options(shiny.maxRequestSize = 30 * 1024^2) # allows for multiple Excel sheets
 
 ui <- fluidPage(
-  navbarPage(title = "Simple clotting app"),
+  navbarPage(title = ThisApp),
   thematic::thematic_shiny(),
   theme = bs_theme(bootswatch = "lumen"),
   sidebarLayout(
     sidebarPanel(
       tags$style(".well {background-color:#FEFEFE;}"),
-      csvFileUI("datafile", h5("load user data")),
+      csvFileUI("datafile", h5("Load user data")),
       TabRes_ui("x"),
       oneplot_ui("x"),
       card(
@@ -36,13 +39,12 @@ ui <- fluidPage(
         # tags$a(href="mailto: drclongstaff@gmail.com", "drclongstaff@gmail.com"))),
 
         tags$a(href = "mailto: drclongstaff@gmail.com", "drclongstaff@gmail.com"),
-        helpText(h6(
-          "Simple clotting analysis app", ver_str,
-          " last accessed", Sys.Date()
-        ), ),
+        helpText(h6(ThisApp, ThisVersion, " last accessed", Sys.Date()), ),
         card_header(
           class = "bg-light",
-          tags$a(href = "https://drclongstaff.github.io/shiny-clots/", "Links to other apps")
+          tags$a(href = "https://drclongstaff.github.io/shiny-clots/", "Links to other apps and help notes"),
+          tags$br(),
+          tags$a(href = "https://www.youtube.com/@colinlongstaff7270", "Youtube channel of help videos")
         )
       ),
     ),
@@ -141,7 +143,7 @@ ui <- fluidPage(
             tags$br(),
             tags$br(),
             "►There is a web page with links to my other apps and some detailed help pages",
-            tags$a(href = "https://drclongstaff.github.io/shiny-clots/", "Links to other apps")
+            tags$a(href = "https://drclongstaff.github.io/shiny-clots/", "Links to other apps"),
           )),
           # tags$img(src="Clots1.png", width=500, height=300),
           # tags$img(src="Tables1.png", width=500, height=200)
