@@ -31,7 +31,7 @@ csvFileServer <- function(id, stringsAsFactors) {
         if (is.null(input$file))
         # {return(read.csv("newCLD.csv"))}
           {
-            return(read.csv("Data/TestData.csv"))
+            return(read.csv("data/TestData.csv"))
           } else {
           ext <- tools::file_ext(userFile()$datapath)
           switch(ext,
