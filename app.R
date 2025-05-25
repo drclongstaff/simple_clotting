@@ -13,7 +13,7 @@ source("./Modules/Plotone2.R")
 source("./Modules/Plotsall2.R")
 source("./Modules/ResTab.R")
 
-ThisVersion <- "version 0.3.2"
+ThisVersion <- "version 0.3.3"
 ThisApp <- "Simple clotting app"
 # thematic::thematic_shiny()
 options(shiny.maxRequestSize = 30 * 1024^2) # allows for multiple Excel sheets
