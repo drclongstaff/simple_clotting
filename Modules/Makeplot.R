@@ -13,7 +13,7 @@ plotmake_fun <- function(myPlate, Time, TabRes, mint, maxt, maxy, samples, k) {
 
   plot <- plot(Time, y.k,
     type = "l", col = "blue", lwd = 3, xlim = c(0, maxt),
-    ylim = c(0, maxy), xaxt = "n", yaxt = "n", ylab = "Abs"
+    ylim = c(0, maxy), ylab = "Abs" , xaxt = "n", yaxt = "n"
   )
   points(Time, y.k, pch = 21, col = "gray70", cex = .8)
 
