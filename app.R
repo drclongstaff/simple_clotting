@@ -66,8 +66,9 @@ ui <- fluidPage(
             card_body(
               style = "background-color: #FFFCF4;",
               layout_sidebar(
-                fillable = FALSE,
+                fillable = TRUE,
                 sidebar = sidebar(
+                  open = TRUE,
                   fluidRow(
                     radioButtons("atab",
                       label = h6("Display results"),
