@@ -10,8 +10,7 @@ plotmake_fun <- function(myPlate, Time, TabRes, mint, maxt, maxy, samples, k, ax
   samples <- colnames(plateData)
 
   y.k <- plateData[[k]]
-  #axy <- "s"
-  #axx <- "n"
+  
   plot <- plot(Time, y.k,
     type = "l", col = "blue", lwd = 3, xlim = c(0, maxt),
     ylim = c(0, maxy), ylab = "Abs" , xaxt = axx, yaxt = axy
